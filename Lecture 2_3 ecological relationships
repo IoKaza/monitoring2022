@@ -1,26 +1,22 @@
-# Here you can write everything! This is a comment!
+# Here you can write everything! This is a comment! ## use these to make comments or disactivate orders
 
 # R code for plotting the relationship among ecological variables
 
 # install.packages is used to install packages
-install.packages("sp")
-library(sp) 
+install.packages("sp") # before I load a library I should install the according package. I can install it also manually Packages->install, write the name
+library(sp) # generates some messages, I don't mind, unless it's an ERROR
 
 # data is used to recall datasets
-data(meuse)
+data(meuse) # access the data of the data set
 
 # llok inside the set!
 meuse
 
-View(meuse) # it might not work for mac
-# solve using: https://www.xquartz.org
-
-head(meuse)
+head(meuse) # view the first few lines of the dataset
 
 
 # Exercise: mean of all of the variables?
-# cadmium crazy mean extraction
-# (11.7+8.6+6.5....)/N
+(11.7+8.6+6.5....)/N
 summary(meuse)
 
 # Exercise: plot zinc (y) against cadmium (x)
@@ -29,7 +25,7 @@ plot(cadmium, zinc)
 # Error in h(simpleError(msg, call)) : 
 #  error in evaluating the argument 'x' in selecting a method for function 'plot': object 'cadmium' not found
 
-# $
+# $ # reffereing to a specific element in the dataset
 
 plot(meuse$cadmium, meuse$zinc)
 
@@ -70,7 +66,6 @@ pairs(meuse[,3:6]) # how to do quadratic parathenses: AltGr + è
 pairs(~ cadmium + copper + lead + zinc, data=meuse) 
 # tilde is going to be done by AltGr + ^
 # in windows: Alt + 0126 or Alt + 126
-# In Mac: alt + n on mac
 
 # let's prettify the graph
 # Exercise: just use cadmium, lead and zince
@@ -83,9 +78,6 @@ pairs(~ cadmium + copper + lead + zinc, data=meuse, col="red")
 
 # Exercise: change the symbol to filled triangles: pch
 pairs(~ cadmium + copper + lead + zinc, data=meuse, col="red", pch=17) 
-
-# nice page on pairs:
-# https://statisticsglobe.com/r-pairs-plot-example/
 
 # Exercise: increase the size of the trinagles
 pairs(~ cadmium + copper + lead + zinc, data=meuse, col="red", pch=17, cex=3) 
